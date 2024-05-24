@@ -2,8 +2,6 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("com.google.gms.google-services")
-   
-
 }
 
 android {
@@ -34,21 +32,24 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
-        viewBinding=true
+        viewBinding = true
+        dataBinding = true  // Add this line to enable data binding
     }
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.firebase.database)
+    implementation(libs.androidx.gridlayout)
+    implementation(libs.firebase.firestore.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
     // Lifecycle
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
@@ -56,12 +57,28 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
     implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
     implementation("com.google.firebase:firebase-analytics")
+    implementation ("com.google.firebase:firebase-database:20.0.5")
+    implementation ("com.google.firebase:firebase-auth:21.0.3")
 
-// ViewModel
+    // ViewModel
     implementation("androidx.activity:activity-ktx:1.9.0")
     implementation("com.github.bumptech.glide:glide:4.12.0")
     implementation("com.google.code.gson:gson:2.10.1")
     implementation("com.tbuonomo:dotsindicator:5.0")
-    implementation(libs.firebase.database)
 
+    // Firebase Auth
+    implementation("com.google.firebase:firebase-auth:18.0.0")
+    // Play Services GCM
+    implementation("com.google.android.gms:play-services-gcm:17.0.0")
+
+    // Add ZXing library dependency
+    implementation("com.google.zxing:core:3.4.1")
+    implementation("com.journeyapps:zxing-android-embedded:4.3.0")
+
+    implementation("androidx.cardview:cardview:1.0.0")
+
+    implementation("androidx.cardview:cardview:1.0.0")
+    implementation("com.google.android.material:material:1.4.0")
+
+    implementation ("com.squareup.picasso:picasso:2.71828")
 }

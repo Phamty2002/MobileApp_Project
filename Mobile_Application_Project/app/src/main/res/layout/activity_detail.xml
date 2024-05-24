@@ -14,8 +14,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
-a
+            android:orientation="vertical">
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -49,6 +49,7 @@ a
                 android:layout_margin="16dp"
                 android:background="@drawable/grey_bg"
                 android:padding="16dp" />
+
             <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
                 android:id="@+id/dotIndicator"
                 android:layout_width="wrap_content"
@@ -71,7 +72,7 @@ a
                 android:layout_marginTop="16dp"
                 android:clipToPadding="false"
                 android:paddingStart="8dp"
-                android:paddingEnd="8dp"/>
+                android:paddingEnd="8dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -87,7 +88,7 @@ a
                     android:text="title"
                     android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:textSize="23sp"/>
+                    android:textSize="23sp" />
 
                 <TextView
                     android:id="@+id/priceTxt"
@@ -96,7 +97,7 @@ a
                     android:text="$0"
                     android:textSize="22sp"
                     android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black" />
             </LinearLayout>
 
             <LinearLayout
@@ -115,7 +116,7 @@ a
                     android:text="Select Size"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:textSize="14sp"/>
+                    android:textSize="14sp" />
 
                 <ImageView
                     android:id="@+id/imageView9"
@@ -129,7 +130,7 @@ a
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:text="5"/>
+                    android:text="5" />
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -145,7 +146,7 @@ a
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView"
-                android:layout_margin="16dp"/>
+                android:layout_margin="16dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
