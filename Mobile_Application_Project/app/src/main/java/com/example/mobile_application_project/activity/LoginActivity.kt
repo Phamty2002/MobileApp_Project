@@ -22,6 +22,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var editTextPassword: EditText
     private lateinit var buttonLogin: Button
     private lateinit var textViewSignUp: TextView
+    private lateinit var textViewForgotPassword: TextView
     private lateinit var auth: FirebaseAuth
     private lateinit var database: DatabaseReference
 
@@ -33,11 +34,17 @@ class LoginActivity : AppCompatActivity() {
         editTextPassword = findViewById(R.id.editTextPassword)
         buttonLogin = findViewById(R.id.buttonLogin)
         textViewSignUp = findViewById(R.id.textViewSignUp)
+        textViewForgotPassword = findViewById(R.id.textViewForgotPassword)
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().reference
 
         textViewSignUp.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
+        textViewForgotPassword.setOnClickListener {
+            val intent = Intent(this, ForgotPasswordActivity::class.java)
             startActivity(intent)
         }
 

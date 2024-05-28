@@ -56,6 +56,8 @@
             android:exported="true" />
         <activity android:name=".activity.WishlistActivity"
             android:exported="true" />
+        <activity android:name=".activity.ForgotPasswordActivity"
+            android:exported="true" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

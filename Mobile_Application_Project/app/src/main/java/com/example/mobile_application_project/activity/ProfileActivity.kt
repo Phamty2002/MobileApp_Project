@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobile_application_project.databinding.ActivityProfileBinding
 import com.example.mobile_application_project.model.UserModel
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -16,11 +17,14 @@ import com.google.firebase.database.ValueEventListener
 class ProfileActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProfileBinding
     private lateinit var database: DatabaseReference
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        auth = FirebaseAuth.getInstance()
 
         val email = intent.getStringExtra("USER_EMAIL")?.replace(".", ",")
         if (email == null) {
@@ -71,6 +75,13 @@ class ProfileActivity : AppCompatActivity() {
 
         binding.btnHome.setOnClickListener {
             navigateHome()
+        }
+
+        binding.btnSignOut.setOnClickListener {
+            auth.signOut()
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 
